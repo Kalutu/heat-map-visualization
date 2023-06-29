@@ -26,7 +26,7 @@ let generateScales = () =>{
     maxYear = d3.max(values,item=>item["year"]);
 
     xScale = d3.scaleLinear()
-                .domain([minYear,maxYear])
+                .domain([minYear,maxYear+1])
                 .range([padding,width-padding])
 
     yScale = d3.scaleTime()
