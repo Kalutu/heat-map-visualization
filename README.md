@@ -2,7 +2,7 @@
 This project is a data visualization of global temperature using D3.js. It displays the monthly variations in temperature over the years and provides an interactive visualization for users to explore the data.
 
 ## Preview
-![Preview]()
+![Heat Map Preview](img/heat-map.jpg)
 
 ## Getting Started
 ### Prerequisites
