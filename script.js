@@ -21,6 +21,8 @@ let canvas = d3.select("#canvas");
 canvas.attr("width",width);
 canvas.attr("height",height);
 
+let tooltip = d3.select("#tooltip");
+
 let generateScales = () =>{
 
     minYear = d3.min(values,item=>item["year"]);
@@ -67,6 +69,33 @@ let drawCells = () =>{
             return (width-(2*padding))/numOfYears;
          })
          .attr("x",item=>xScale(item["year"]))
+         .on("mouseover",item=>{
+            tooltip.transition()
+                    .style("visibility","visible")
+
+            let monthNames = [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December"
+                      ];
+                      
+            tooltip.text(item["year"]+" "+monthNames[item["month"]-1]+" - "+(baseTemp+item["variance"])+" ("+item["variance"]+")")
+
+            tooltip.attr("data-year",item["year"])
+         })
+         .on("mouseout",item=>{
+            tooltip.transition()
+                    .style("visibility","hidden")
+         })
 
 }
 
