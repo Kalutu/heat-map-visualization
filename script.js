@@ -17,11 +17,20 @@ canvas.attr("width",width);
 canvas.attr("height",height);
 
 let generateScales = () =>{
+    xScale = d3.scaleLinear()
+                .range([padding,width-padding])
 
+    yScale = d3.scaleLinear()
+                .range()
 }
 
 let drawCells = () =>{
-
+    let xAxis = d3.axisBottom(xScale);
+    
+    canvas.append("g")
+          .call(xAxis)
+          .attr("id","x-axis")
+          .attr("transform","translate(0,"+(height-padding)+")")
 }
 
 let drawAxes = () =>{
