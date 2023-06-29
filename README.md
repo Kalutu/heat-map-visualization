@@ -34,3 +34,16 @@ This project is a data visualization of global temperature using D3.js. It displ
 
 ## Data Source
 The data used for this visualization is sourced from [freeCodeCamp](https://www.freecodecamp.org/)'s [Project Reference Data](https://github.com/freeCodeCamp/ProjectReferenceData) repository. The specific dataset used is [global-temperature.json](https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json).
+
+## Contributing
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+
+## Credits
+This project is based on a challenge from the freeCodeCamp Data Visualisation projects.
+
+Special thanks to freeCodeCamp for providing educational resources and coding challenges to help developers learn and improve their skills.
+
+### Resources
+- [D3.js](https://d3js.org/): A powerful JavaScript library for creating data visualizations in the browser.
+- [freeCodeCamp](https://www.freecodecamp.org/): An open-source community that offers a platform for learning web development through hands-on coding projects.
+
