@@ -79,7 +79,8 @@ let drawAxes = () =>{
           .attr("id","x-axis")
           .attr("transform","translate(0,"+(height-padding)+")")
 
-    let yAxis = d3.axisLeft(yScale);
+    let yAxis = d3.axisLeft(yScale)
+                  .tickFormat(d3.timeFormat("%B"))
 
     canvas.append("g")
           .call(yAxis)
