@@ -22,6 +22,7 @@ let generateScales = () =>{
                 .range([padding,width-padding])
 
     yScale = d3.scaleTime()
+               .domain([new Date(0,0,0,0,0,0,0),new Date(0,12,0,0,0,0,0)])
                 .range([padding,height-padding])
 }
 
@@ -47,6 +48,11 @@ let drawCells = () =>{
                 return "Crimson"
             }
          })
+         .attr("data-year",item=>item["year"])
+         .attr("data-month",item=>item["month"]-1)
+         .attr("data-temp",item=>baseTemp+item["variance"])
+         .attr("height",(height-(2*padding))/12)
+         .attr("y",item=>yScale(new Date(0,item["month"]-1,0,0,0,0,0)))
 
 }
 
