@@ -20,8 +20,8 @@ let generateScales = () =>{
     xScale = d3.scaleLinear()
                 .range([padding,width-padding])
 
-    yScale = d3.scaleLinear()
-                .range()
+    yScale = d3.scaleTime()
+                .range([padding,height-padding])
 }
 
 let drawCells = () =>{
@@ -31,6 +31,14 @@ let drawCells = () =>{
           .call(xAxis)
           .attr("id","x-axis")
           .attr("transform","translate(0,"+(height-padding)+")")
+
+    let yAxis = d3.axisLeft(yScale);
+
+    canvas.append("g")
+          .call(yAxis)
+          .attr("id","y-axis")
+          .attr("transform","translate("+padding+",0)")
+
 }
 
 let drawAxes = () =>{
