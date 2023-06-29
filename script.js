@@ -9,6 +9,9 @@ let variance;
 let xScale;
 let yScale;
 
+let minYear;
+let maxYear;
+
 let width = 1200;
 let height = 600;
 let padding = 60;
@@ -18,7 +21,12 @@ canvas.attr("width",width);
 canvas.attr("height",height);
 
 let generateScales = () =>{
+
+    minYear = d3.min(values,item=>item["year"]);
+    maxYear = d3.max(values,item=>item["year"]);
+
     xScale = d3.scaleLinear()
+                .domain([minYear,maxYear])
                 .range([padding,width-padding])
 
     yScale = d3.scaleTime()
@@ -53,11 +61,17 @@ let drawCells = () =>{
          .attr("data-temp",item=>baseTemp+item["variance"])
          .attr("height",(height-(2*padding))/12)
          .attr("y",item=>yScale(new Date(0,item["month"]-1,0,0,0,0,0)))
+         .attr("width",item=>{
+            let numYears = maxYear-minYear;
+            return (width-(2*padding))/numYears;
+         })
+         .attr("x",item=>xScale(item["year"]))
 
 }
 
 let drawAxes = () =>{
-    let xAxis = d3.axisBottom(xScale);
+    let xAxis = d3.axisBottom(xScale)
+                  .tickFormat(d3.format("d"))
     
     canvas.append("g")
           .call(xAxis)
