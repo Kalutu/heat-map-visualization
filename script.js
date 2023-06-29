@@ -25,6 +25,16 @@ let generateScales = () =>{
 }
 
 let drawCells = () =>{
+    
+    canvas.selectAll("rect")
+         .data(values)
+         .enter()
+         .append("rect")
+         .attr("class","cell")
+
+}
+
+let drawAxes = () =>{
     let xAxis = d3.axisBottom(xScale);
     
     canvas.append("g")
@@ -38,11 +48,6 @@ let drawCells = () =>{
           .call(yAxis)
           .attr("id","y-axis")
           .attr("transform","translate("+padding+",0)")
-
-}
-
-let drawAxes = () =>{
-
 }
 
 req.open("GET",url,true);
