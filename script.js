@@ -28,4 +28,13 @@ let drawAxes = () =>{
 
 }
 
-
+req.open("GET",url,true);
+req.onload = ()=>{
+    let data = JSON.parse(req.responseText);
+    baseTemp = data["baseTemperature"];
+    values = data["monthlyVariance"];
+    generateScales();
+    drawCells();
+    drawAxes();
+}
+req.send();
