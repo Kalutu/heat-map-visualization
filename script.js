@@ -11,6 +11,7 @@ let yScale;
 
 let minYear;
 let maxYear;
+let numOfYears = maxYear - minYear;
 
 let width = 1200;
 let height = 600;
@@ -62,8 +63,8 @@ let drawCells = () =>{
          .attr("height",(height-(2*padding))/12)
          .attr("y",item=>yScale(new Date(0,item["month"]-1,0,0,0,0,0)))
          .attr("width",item=>{
-            let numYears = maxYear-minYear;
-            return (width-(2*padding))/numYears;
+            numOfYears = maxYear-minYear;
+            return (width-(2*padding))/numOfYears;
          })
          .attr("x",item=>xScale(item["year"]))
 
