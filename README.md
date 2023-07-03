@@ -1,4 +1,4 @@
-# Global Temperature Data Visualization
+# Haet Map Visualization
 This project is a data visualization of global temperature using D3.js. It displays the monthly variations in temperature over the years and provides an interactive visualization for users to explore the data.
 
 ## Preview
@@ -39,7 +39,7 @@ The data used for this visualization is sourced from [freeCodeCamp](https://www.
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
 ## Credits
-This project is based on a challenge from the freeCodeCamp Data Visualisation projects.
+This Heat Map project is part of the [FreeCodeCamp Data Visualization Certification](https://www.freecodecamp.org/learn/data-visualization/) course. It was completed as one of the required projects in the curriculum.
 
 Special thanks to freeCodeCamp for providing educational resources and coding challenges to help developers learn and improve their skills.
 
