@@ -1,4 +1,4 @@
-# Haet Map Visualization
+# Heat Map Visualization
 This project is a data visualization of global temperature using D3.js. It displays the monthly variations in temperature over the years and provides an interactive visualization for users to explore the data.
 
 ## Preview
